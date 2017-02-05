@@ -15,6 +15,7 @@
 		382566F51E467FFB00E52BCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382566F31E467FFB00E52BCE /* LaunchScreen.storyboard */; };
 		382567001E467FFB00E52BCE /* BBPhobiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382566FF1E467FFB00E52BCE /* BBPhobiaTests.swift */; };
 		3825670B1E467FFB00E52BCE /* BBPhobiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3825670A1E467FFB00E52BCE /* BBPhobiaUITests.swift */; };
+		38555D921E47727900A2A07B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38555D911E47727900A2A07B /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		382567061E467FFB00E52BCE /* BBPhobiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBPhobiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3825670A1E467FFB00E52BCE /* BBPhobiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPhobiaUITests.swift; sourceTree = "<group>"; };
 		3825670C1E467FFB00E52BCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38555D911E47727900A2A07B /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		38555D9E1E478C8900A2A07B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +102,10 @@
 		382566E71E467FFB00E52BCE /* BBPhobia */ = {
 			isa = PBXGroup;
 			children = (
-				382566E81E467FFB00E52BCE /* AppDelegate.swift */,
-				382566EA1E467FFB00E52BCE /* FirstViewController.swift */,
-				382566EC1E467FFB00E52BCE /* SecondViewController.swift */,
-				382566EE1E467FFB00E52BCE /* Main.storyboard */,
-				382566F11E467FFB00E52BCE /* Assets.xcassets */,
-				382566F31E467FFB00E52BCE /* LaunchScreen.storyboard */,
+				38555D971E4779A300A2A07B /* views */,
+				38555D981E4779B500A2A07B /* storys */,
 				382566F61E467FFB00E52BCE /* Info.plist */,
+				382566F11E467FFB00E52BCE /* Assets.xcassets */,
 			);
 			path = BBPhobia;
 			sourceTree = "<group>";
@@ -126,6 +126,26 @@
 				3825670C1E467FFB00E52BCE /* Info.plist */,
 			);
 			path = BBPhobiaUITests;
+			sourceTree = "<group>";
+		};
+		38555D971E4779A300A2A07B /* views */ = {
+			isa = PBXGroup;
+			children = (
+				382566E81E467FFB00E52BCE /* AppDelegate.swift */,
+				38555D911E47727900A2A07B /* TabBarViewController.swift */,
+				382566EA1E467FFB00E52BCE /* FirstViewController.swift */,
+				382566EC1E467FFB00E52BCE /* SecondViewController.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		38555D981E4779B500A2A07B /* storys */ = {
+			isa = PBXGroup;
+			children = (
+				382566EE1E467FFB00E52BCE /* Main.storyboard */,
+				382566F31E467FFB00E52BCE /* LaunchScreen.storyboard */,
+			);
+			name = storys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +287,7 @@
 			files = (
 				382566ED1E467FFB00E52BCE /* SecondViewController.swift in Sources */,
 				382566E91E467FFB00E52BCE /* AppDelegate.swift in Sources */,
+				38555D921E47727900A2A07B /* TabBarViewController.swift in Sources */,
 				382566EB1E467FFB00E52BCE /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +328,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				382566EF1E467FFB00E52BCE /* Base */,
+				38555D9E1E478C8900A2A07B /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -518,6 +540,7 @@
 				382567111E467FFB00E52BCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		382567121E467FFB00E52BCE /* Build configuration list for PBXNativeTarget "BBPhobiaTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +549,7 @@
 				382567141E467FFB00E52BCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		382567151E467FFB00E52BCE /* Build configuration list for PBXNativeTarget "BBPhobiaUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +558,7 @@
 				382567171E467FFB00E52BCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

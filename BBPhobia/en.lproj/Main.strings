@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "Loaded by FirstViewController"; ObjectID = "A5M-7J-77L"; */
+"A5M-7J-77L.text" = "Loaded by FirstViewController";
+
+/* Class = "UILabel"; text = "First View"; ObjectID = "KQZ-1w-vlD"; */
+"KQZ-1w-vlD.text" = "First View";
+
+/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "NDk-cv-Gan"; */
+"NDk-cv-Gan.text" = "Loaded by SecondViewController";
+
+/* Class = "UINavigationItem"; title = "First View"; ObjectID = "bwT-oo-2Et"; */
+"bwT-oo-2Et.title" = "First View";
+
+/* Class = "UITabBarItem"; title = "Puls"; ObjectID = "rAg-s1-G1O"; */
+"rAg-s1-G1O.title" = "Puls";
+
+/* Class = "UINavigationItem"; title = "Second View"; ObjectID = "uVR-yO-THb"; */
+"uVR-yO-THb.title" = "Second View";
+
+/* Class = "UILabel"; text = "Second View"; ObjectID = "zEq-FU-wV5"; */
+"zEq-FU-wV5.text" = "Second View";
