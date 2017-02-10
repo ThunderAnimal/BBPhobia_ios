@@ -15,8 +15,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        self.window?.tintColor = UIColor.init(red: 65.0/255.0, green: 81.0/255.0, blue: 181.0/255.0, alpha: 1.0)
+        
+        //----- Set Up UI -------
+        let myAppColor = AppColor()
+        
+        //Button and Link Color
+        self.window?.tintColor = myAppColor.primaryColor
+        
+        //Navigation Bar
+        UINavigationBar.appearance().tintColor = myAppColor.textColorLight
+        UINavigationBar.appearance().barTintColor = myAppColor.primaryColor
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: myAppColor.textColorLight]
+        
+        //Naviagtion Bar Shadow
+        UINavigationBar.appearance().castShadow = ""
+        
+        //Text Color
+        UILabel.appearance().textColor = myAppColor.textColorDark
+        
+        //Status Bar
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        //Show Statusbar
+        UIApplication.shared.setStatusBarHidden(false, with: .slide)
+        
         return true
     }
 

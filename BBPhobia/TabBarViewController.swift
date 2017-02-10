@@ -49,7 +49,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         // Disable interaction during animation
         view.isUserInteractionEnabled = false
         
-        UIView.transition(from: fromView!, to: toView!, duration: 0.3, options: UIViewAnimationOptions.transitionCrossDissolve, completion: { finished in
+        UIView.transition(from: fromView!, to: toView!, duration: 0.5, options: UIViewAnimationOptions.transitionCrossDissolve, completion: { finished in
             
             // Remove the old view from the tabbar view.
             fromView?.removeFromSuperview()
