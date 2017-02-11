@@ -12,6 +12,7 @@ class FirstViewController: UIViewController, PulsView {
     
 
     @IBOutlet weak var btnHello: UIButton!
+    @IBOutlet weak var btnStartWorkout: UIButton!
     var presenter: PulsPresenter? = nil
 
     
@@ -22,6 +23,7 @@ class FirstViewController: UIViewController, PulsView {
         presenter = PulsPresenter(view: self)
         
         btnHello.addTarget(self, action: #selector(self.onClick(_:)), for: .touchUpInside)
+        btnStartWorkout.addTarget(self, action: #selector(self.onClick(_:)), for: .touchUpInside)
         
     }
 
@@ -35,6 +37,8 @@ class FirstViewController: UIViewController, PulsView {
         case btnHello:
             presenter?.clickHello()
             break
+        case btnStartWorkout:
+            presenter?.startWorkout()
         default: break
 
         }
@@ -42,6 +46,11 @@ class FirstViewController: UIViewController, PulsView {
     
     func alterHelloWorld(){
         let alert = UIAlertController(title: "Hello World!", message: "Hey ich lebe, mann ist das Geil!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    func viewError(errMsg:String) {
+        let alert = UIAlertController(title: "Schade", message: errMsg, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }

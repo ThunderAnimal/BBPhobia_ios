@@ -16,6 +16,7 @@
 		382567001E467FFB00E52BCE /* BBPhobiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382566FF1E467FFB00E52BCE /* BBPhobiaTests.swift */; };
 		3825670B1E467FFB00E52BCE /* BBPhobiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3825670A1E467FFB00E52BCE /* BBPhobiaUITests.swift */; };
 		38555D921E47727900A2A07B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38555D911E47727900A2A07B /* TabBarViewController.swift */; };
+		38A92FA51E4F707A0032F46B /* HealthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A92FA41E4F707A0032F46B /* HealthController.swift */; };
 		38AC56FA1E4CD37B00408019 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC56F91E4CD37B00408019 /* AppComponent.swift */; };
 		38AC57001E4CD3D900408019 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38AC56FF1E4CD3D900408019 /* HealthKit.framework */; };
 		38AC57021E4CD49B00408019 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC57011E4CD49B00408019 /* AppColor.swift */; };
@@ -62,6 +63,7 @@
 		3825670C1E467FFB00E52BCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38555D911E47727900A2A07B /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		38555DA01E47DC4B00A2A07B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		38A92FA41E4F707A0032F46B /* HealthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthController.swift; sourceTree = "<group>"; };
 		38AC56F91E4CD37B00408019 /* AppComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		38AC56FD1E4CD3D900408019 /* BBPhobia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BBPhobia.entitlements; sourceTree = "<group>"; };
 		38AC56FF1E4CD3D900408019 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -179,6 +181,7 @@
 			children = (
 				38AC56F91E4CD37B00408019 /* AppComponent.swift */,
 				38AC57011E4CD49B00408019 /* AppColor.swift */,
+				38A92FA41E4F707A0032F46B /* HealthController.swift */,
 			);
 			name = application;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				38AC57041E4DA61D00408019 /* convCGValues.swift in Sources */,
 				38AC56FA1E4CD37B00408019 /* AppComponent.swift in Sources */,
 				38F5610F1E47E75F0021DCA0 /* OnClickListener.swift in Sources */,
+				38A92FA51E4F707A0032F46B /* HealthController.swift in Sources */,
 				382566E91E467FFB00E52BCE /* AppDelegate.swift in Sources */,
 				38555D921E47727900A2A07B /* TabBarViewController.swift in Sources */,
 				38AC57021E4CD49B00408019 /* AppColor.swift in Sources */,

@@ -56,5 +56,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Um den Puls messen zu können, muss ein Workout gesartet werden. Hierzu braucht die App die Berechtigung zum erstellen von Workouts.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Zum Anzeigen des Puls müssen die Daten aus dem HealtStore gelesen werden.</string>
 </dict>
 </plist>

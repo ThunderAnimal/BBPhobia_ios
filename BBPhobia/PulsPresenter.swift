@@ -17,6 +17,17 @@ class PulsPresenter{
     func clickHello(){
         view.alterHelloWorld()
     }
+    func startWorkout(){
+        AppComponent.instance.getHealStore().enableHealthKit { (authorized, error) in
+            if authorized{
+                print("Succes")
+            }
+            else{
+                print(error.debugDescription)
+                self.view.viewError(errMsg: error.debugDescription)
+            }
+        }
+    }
     
     
 }

@@ -11,15 +11,15 @@ import HealthKit
 
 class AppComponent {
     public static let instance = AppComponent()
-    private var healStore: HKHealthStore?
+    private var healthController: HealthController?
     
-    init() {
+    private init() {
     }
     
-    public func getHealStore() -> HKHealthStore{
-        if(self.healStore == nil){
-            healStore = HKHealthStore()
+    public func getHealStore() -> HealthController{
+        if(self.healthController == nil){
+            healthController = HealthController()
         }
-        return healStore!
+        return healthController!
     }
 }

@@ -9,5 +9,6 @@
 import Foundation
 protocol PulsView {
     func alterHelloWorld()
+    func viewError(errMsg: String)
     
 }
