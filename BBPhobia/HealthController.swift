@@ -8,6 +8,7 @@
 
 import Foundation
 import HealthKit
+import WatchKit
 
 class HealthController {
     private let healthStore: HKHealthStore
@@ -53,5 +54,25 @@ class HealthController {
     
     public func getHealStore() -> HKHealthStore{
         return healthStore
+    }
+    
+    public func startWorkout(callback: ((_ success:Bool, _ error:Error?) -> Void)!){
+        let configuration = HKWorkoutConfiguration()
+        configuration.activityType = .running
+        configuration.locationType = .outdoor
+
+        self.healthStore.startWatchApp(with: configuration) { (success, error) in
+            if(success){
+                callback(success, nil)
+            }else{
+                callback(success, error)
+                if(error != nil){
+                    print(error.debugDescription)
+                }
+            }
+        }
+    }
+    public func stopWorkout(){
+        
     }
 }

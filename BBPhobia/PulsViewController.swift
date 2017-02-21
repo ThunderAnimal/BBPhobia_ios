@@ -13,6 +13,7 @@ class FirstViewController: UIViewController, PulsView {
 
     @IBOutlet weak var btnHello: UIButton!
     @IBOutlet weak var btnStartWorkout: UIButton!
+    @IBOutlet weak var btnStopWorkout: UIButton!
     var presenter: PulsPresenter? = nil
 
     
@@ -24,7 +25,9 @@ class FirstViewController: UIViewController, PulsView {
         
         btnHello.addTarget(self, action: #selector(self.onClick(_:)), for: .touchUpInside)
         btnStartWorkout.addTarget(self, action: #selector(self.onClick(_:)), for: .touchUpInside)
+        btnStopWorkout.addTarget(self, action: #selector(self.onClick(_:)), for: .touchUpInside)
         
+        presenter?.requestContent()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,13 +37,14 @@ class FirstViewController: UIViewController, PulsView {
     
     func onClick(_ sender: UIButton){
         switch sender {
-        case btnHello:
-            presenter?.clickHello()
-            break
-        case btnStartWorkout:
-            presenter?.startWorkout()
-        default: break
-
+            case btnHello:
+                presenter?.clickHello()
+                break
+            case btnStartWorkout:
+                presenter?.startWorkout()
+            case btnStopWorkout:
+                presenter?.stopWorkout()
+            default: break
         }
     }
     
@@ -53,6 +57,15 @@ class FirstViewController: UIViewController, PulsView {
         let alert = UIAlertController(title: "Schade", message: errMsg, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    func drawState(isMeasure: Bool){
+        if(isMeasure){
+            btnStartWorkout.isHidden = true
+            btnStopWorkout.isHidden = false
+        }else{
+            btnStartWorkout.isHidden = false
+            btnStopWorkout.isHidden = true
+        }
     }
 }
 

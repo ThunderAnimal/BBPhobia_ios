@@ -8,6 +8,8 @@
 
 import WatchKit
 import Foundation
+import HealthKit
+import WatchConnectivity
 
 
 class InterfaceController: WKInterfaceController {

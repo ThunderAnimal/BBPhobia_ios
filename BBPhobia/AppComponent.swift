@@ -12,6 +12,7 @@ import HealthKit
 class AppComponent {
     public static let instance = AppComponent()
     private var healthController: HealthController?
+    private var watchSession: WatchSession?
     
     private init() {
     }
@@ -21,5 +22,12 @@ class AppComponent {
             healthController = HealthController()
         }
         return healthController!
+    }
+    
+    public func getWatchSession() -> WatchSession{
+        if(self.watchSession == nil){
+            watchSession = WatchSession()
+        }
+        return watchSession!
     }
 }

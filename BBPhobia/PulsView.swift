@@ -10,5 +10,5 @@ import Foundation
 protocol PulsView {
     func alterHelloWorld()
     func viewError(errMsg: String)
-    
+    func drawState(isMeasure: Bool)
 }

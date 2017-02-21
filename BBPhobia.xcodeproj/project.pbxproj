@@ -30,6 +30,10 @@
 		38AC57021E4CD49B00408019 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC57011E4CD49B00408019 /* AppColor.swift */; };
 		38AC57041E4DA61D00408019 /* convCGValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC57031E4DA61D00408019 /* convCGValues.swift */; };
 		38AC57061E4DA92F00408019 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AC57051E4DA92F00408019 /* UINavigationBar.swift */; };
+		38C453311E5CC36E00E9A676 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C453301E5CC36E00E9A676 /* HealthKit.framework */; };
+		38C453341E5CCD4200E9A676 /* WatchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C453331E5CCD4200E9A676 /* WatchSession.swift */; };
+		38C453361E5CD1CA00E9A676 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C453351E5CD1CA00E9A676 /* SessionDelegate.swift */; };
+		38C4533A1E5CDE5E00E9A676 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C453391E5CDE5E00E9A676 /* WorkoutManager.swift */; };
 		38F5610F1E47E75F0021DCA0 /* OnClickListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F5610E1E47E75F0021DCA0 /* OnClickListener.swift */; };
 		38F561111E47E7860021DCA0 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F561101E47E7860021DCA0 /* Presenter.swift */; };
 		38F561131E47E79A0021DCA0 /* PresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F561121E47E79A0021DCA0 /* PresenterView.swift */; };
@@ -128,6 +132,11 @@
 		38AC57011E4CD49B00408019 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		38AC57031E4DA61D00408019 /* convCGValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = convCGValues.swift; sourceTree = "<group>"; };
 		38AC57051E4DA92F00408019 /* UINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		38C453301E5CC36E00E9A676 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		38C453321E5CC36E00E9A676 /* watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watch Extension.entitlements"; sourceTree = "<group>"; };
+		38C453331E5CCD4200E9A676 /* WatchSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSession.swift; sourceTree = "<group>"; };
+		38C453351E5CD1CA00E9A676 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		38C453391E5CDE5E00E9A676 /* WorkoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		38F5610E1E47E75F0021DCA0 /* OnClickListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnClickListener.swift; sourceTree = "<group>"; };
 		38F561101E47E7860021DCA0 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		38F561121E47E79A0021DCA0 /* PresenterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterView.swift; sourceTree = "<group>"; };
@@ -162,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C453311E5CC36E00E9A676 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,12 +268,15 @@
 		38A92FB81E4F7DC00032F46B /* watch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				38C453321E5CC36E00E9A676 /* watch Extension.entitlements */,
 				38A92FBB1E4F7DC00032F46B /* InterfaceController.swift */,
 				38A92FBD1E4F7DC00032F46B /* ExtensionDelegate.swift */,
 				38A92FBF1E4F7DC00032F46B /* NotificationController.swift */,
 				38A92FC11E4F7DC00032F46B /* Assets.xcassets */,
 				38A92FC31E4F7DC00032F46B /* Info.plist */,
 				38A92FB91E4F7DC00032F46B /* Supporting Files */,
+				38C453351E5CD1CA00E9A676 /* SessionDelegate.swift */,
+				38C453391E5CDE5E00E9A676 /* WorkoutManager.swift */,
 			);
 			path = "watch Extension";
 			sourceTree = "<group>";
@@ -282,6 +295,7 @@
 				38AC56F91E4CD37B00408019 /* AppComponent.swift */,
 				38AC57011E4CD49B00408019 /* AppColor.swift */,
 				38A92FA41E4F707A0032F46B /* HealthController.swift */,
+				38C453331E5CCD4200E9A676 /* WatchSession.swift */,
 			);
 			name = application;
 			sourceTree = "<group>";
@@ -289,6 +303,7 @@
 		38AC56FE1E4CD3D900408019 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38C453301E5CC36E00E9A676 /* HealthKit.framework */,
 				38AC56FF1E4CD3D900408019 /* HealthKit.framework */,
 			);
 			name = Frameworks;
@@ -465,6 +480,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 7NV745LHBB;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -550,6 +570,7 @@
 				38F5610F1E47E75F0021DCA0 /* OnClickListener.swift in Sources */,
 				38A92FA51E4F707A0032F46B /* HealthController.swift in Sources */,
 				382566E91E467FFB00E52BCE /* AppDelegate.swift in Sources */,
+				38C453341E5CCD4200E9A676 /* WatchSession.swift in Sources */,
 				38555D921E47727900A2A07B /* TabBarViewController.swift in Sources */,
 				38AC57021E4CD49B00408019 /* AppColor.swift in Sources */,
 				382566EB1E467FFB00E52BCE /* PulsViewController.swift in Sources */,
@@ -578,7 +599,9 @@
 			files = (
 				38A92FC01E4F7DC00032F46B /* NotificationController.swift in Sources */,
 				38A92FBE1E4F7DC00032F46B /* ExtensionDelegate.swift in Sources */,
+				38C4533A1E5CDE5E00E9A676 /* WorkoutManager.swift in Sources */,
 				38A92FBC1E4F7DC00032F46B /* InterfaceController.swift in Sources */,
+				38C453361E5CD1CA00E9A676 /* SessionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,6 +842,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				DEVELOPMENT_TEAM = 7NV745LHBB;
 				INFOPLIST_FILE = "watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -836,6 +860,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "watch Extension/watch Extension.entitlements";
 				DEVELOPMENT_TEAM = 7NV745LHBB;
 				INFOPLIST_FILE = "watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -931,6 +956,7 @@
 				38A92FC91E4F7DC00032F46B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38A92FCB1E4F7DC00032F46B /* Build configuration list for PBXNativeTarget "watch" */ = {
 			isa = XCConfigurationList;
@@ -939,6 +965,7 @@
 				38A92FCD1E4F7DC00032F46B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

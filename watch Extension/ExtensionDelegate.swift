@@ -7,11 +7,14 @@
 //
 
 import WatchKit
+import HealthKit
+import WatchConnectivity
 
-class ExtensionDelegate: NSObject, WKExtensionDelegate {
+class ExtensionDelegate: NSObject, WKExtensionDelegate  {
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
+        SessionDelegate.sharedManager.startSession()
     }
 
     func applicationDidBecomeActive() {
@@ -40,11 +43,15 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             case let urlSessionTask as WKURLSessionRefreshBackgroundTask:
                 // Be sure to complete the URL session task once you’re done.
                 urlSessionTask.setTaskCompleted()
+            
             default:
                 // make sure to complete unhandled task types
                 task.setTaskCompleted()
             }
         }
     }
-
+    
+    func handle(_ workoutConfiguration: HKWorkoutConfiguration) {
+        WorkoutManager.sharedManager.starWorkout(workoutConfiguration: workoutConfiguration)
+    }
 }
