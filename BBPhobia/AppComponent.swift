@@ -17,7 +17,7 @@ class AppComponent {
     private init() {
     }
     
-    public func getHealStore() -> HealthController{
+    public func getHealthController() -> HealthController{
         if(self.healthController == nil){
             healthController = HealthController()
         }

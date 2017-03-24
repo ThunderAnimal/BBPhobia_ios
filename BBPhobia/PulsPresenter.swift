@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class PulsPresenter{
+class PulsPresenter: ObserverHeartRate{
     private let view: PulsView!
     
     init(view: PulsView){
@@ -18,38 +18,46 @@ class PulsPresenter{
     }
     
     func clickHello(){
-        view.alterHelloWorld()
-        
-        let session = AppComponent.instance.getWatchSession().getSession()
-        session.sendMessage(["message from iOS app" : "Hello World!"], replyHandler: { reply in
-            //HANLDE REPLY
-        }, errorHandler: nil)
-    }
-    func startWorkout(){
-        AppComponent.instance.getHealStore().enableHealthKit { (authorized, error) in
-            if authorized{
-                AppComponent.instance.getHealStore().startWorkout { (success, error) in
-                    if success{
-                        self.view.drawState(isMeasure: true)
-                    }else{
-                        self.view.drawState(isMeasure: false)
-                        self.view.viewError(errMsg: error.debugDescription)
-                    }
-                }
-            }
-            else{
-                print(error.debugDescription)
-                self.view.viewError(errMsg: error.debugDescription)
+        AppComponent.instance.getWatchSession().sendMessage(key: "HelloWorld", data: "Hallo World!") { (success, errMsg) in
+            if(!success){
+                self.view.viewError(errMsg: errMsg)
+                print(errMsg)
+            }else{
+                 self.view.alterHelloWorld()
             }
         }
     }
-    func stopWorkout(){
-        let session = AppComponent.instance.getWatchSession().getSession()
-        session.sendMessage(["stopWorkout" : "stopWorkout"], replyHandler: { reply in
-            //HANLDE REPLY
-        }, errorHandler: nil)
-        self.view.drawState(isMeasure: false)
+    func startMeasure(){
+        //CHECK if is Enbale Healtkit
+        AppComponent.instance.getHealthController().enableHealthKit { (authorized, error) in
+            if(!authorized){
+                print(error.debugDescription)
+                self.view.viewError(errMsg: error.debugDescription)
+                return
+            }
+        }
+        
+        AppComponent.instance.getWatchSession().sendMessage(key: "startWorkout", data: "start") { (success, errMsg) in
+            if(success){
+                self.view.drawState(isMeasure: true)
+                AppComponent.instance.getHealthController().addObserverHeartRate(observer: self)
+            }else{
+                self.view.viewError(errMsg: "Can't start." + errMsg)
+            }
+        }
     }
-    
-    
+    func stopMeasure(){
+        AppComponent.instance.getWatchSession().sendMessage(key: "stopWorkout", data: "stop") { (success, errMsg) in
+            if(success){
+                self.view.drawState(isMeasure: false)
+                AppComponent.instance.getHealthController().removeObserverHeartRate(observer: self)
+            }
+            else{
+                self.view.viewError(errMsg: "Can't stop." + errMsg)
+            }
+        }
+    }
+    func notifyNewHeartRate(heartRate: HeartRate){
+        self.view.drawHeartRate(value: heartRate.value)
+    }
 }

@@ -34,7 +34,8 @@
 		38C453341E5CCD4200E9A676 /* WatchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C453331E5CCD4200E9A676 /* WatchSession.swift */; };
 		38C453361E5CD1CA00E9A676 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C453351E5CD1CA00E9A676 /* SessionDelegate.swift */; };
 		38C4533A1E5CDE5E00E9A676 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C453391E5CDE5E00E9A676 /* WorkoutManager.swift */; };
-		38F5610F1E47E75F0021DCA0 /* OnClickListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F5610E1E47E75F0021DCA0 /* OnClickListener.swift */; };
+		38EFD2D81E855B8000F05AF3 /* InterfaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFD2D71E855B8000F05AF3 /* InterfaceManager.swift */; };
+		38EFD2DB1E8596B600F05AF3 /* HearRateStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFD2DA1E8596B600F05AF3 /* HearRateStruct.swift */; };
 		38F561111E47E7860021DCA0 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F561101E47E7860021DCA0 /* Presenter.swift */; };
 		38F561131E47E79A0021DCA0 /* PresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F561121E47E79A0021DCA0 /* PresenterView.swift */; };
 		38F561151E47E7C80021DCA0 /* PulsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F561141E47E7C80021DCA0 /* PulsView.swift */; };
@@ -137,7 +138,8 @@
 		38C453331E5CCD4200E9A676 /* WatchSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSession.swift; sourceTree = "<group>"; };
 		38C453351E5CD1CA00E9A676 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 		38C453391E5CDE5E00E9A676 /* WorkoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
-		38F5610E1E47E75F0021DCA0 /* OnClickListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnClickListener.swift; sourceTree = "<group>"; };
+		38EFD2D71E855B8000F05AF3 /* InterfaceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceManager.swift; sourceTree = "<group>"; };
+		38EFD2DA1E8596B600F05AF3 /* HearRateStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HearRateStruct.swift; sourceTree = "<group>"; };
 		38F561101E47E7860021DCA0 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		38F561121E47E79A0021DCA0 /* PresenterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterView.swift; sourceTree = "<group>"; };
 		38F561141E47E7C80021DCA0 /* PulsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulsView.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		382566E71E467FFB00E52BCE /* BBPhobia */ = {
 			isa = PBXGroup;
 			children = (
+				38EFD2D91E85969C00F05AF3 /* misc */,
 				38AC56FD1E4CD3D900408019 /* BBPhobia.entitlements */,
 				38555D971E4779A300A2A07B /* views */,
 				38555D981E4779B500A2A07B /* storys */,
@@ -277,6 +280,7 @@
 				38A92FB91E4F7DC00032F46B /* Supporting Files */,
 				38C453351E5CD1CA00E9A676 /* SessionDelegate.swift */,
 				38C453391E5CDE5E00E9A676 /* WorkoutManager.swift */,
+				38EFD2D71E855B8000F05AF3 /* InterfaceManager.swift */,
 			);
 			path = "watch Extension";
 			sourceTree = "<group>";
@@ -309,10 +313,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		38EFD2D91E85969C00F05AF3 /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				38EFD2DA1E8596B600F05AF3 /* HearRateStruct.swift */,
+			);
+			name = misc;
+			sourceTree = "<group>";
+		};
 		38F561091E47E6AD0021DCA0 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				38F5610E1E47E75F0021DCA0 /* OnClickListener.swift */,
 				38AC57031E4DA61D00408019 /* convCGValues.swift */,
 				38555D911E47727900A2A07B /* TabBarViewController.swift */,
 				38AC57051E4DA92F00408019 /* UINavigationBar.swift */,
@@ -567,11 +578,11 @@
 				38F561131E47E79A0021DCA0 /* PresenterView.swift in Sources */,
 				38AC57041E4DA61D00408019 /* convCGValues.swift in Sources */,
 				38AC56FA1E4CD37B00408019 /* AppComponent.swift in Sources */,
-				38F5610F1E47E75F0021DCA0 /* OnClickListener.swift in Sources */,
 				38A92FA51E4F707A0032F46B /* HealthController.swift in Sources */,
 				382566E91E467FFB00E52BCE /* AppDelegate.swift in Sources */,
 				38C453341E5CCD4200E9A676 /* WatchSession.swift in Sources */,
 				38555D921E47727900A2A07B /* TabBarViewController.swift in Sources */,
+				38EFD2DB1E8596B600F05AF3 /* HearRateStruct.swift in Sources */,
 				38AC57021E4CD49B00408019 /* AppColor.swift in Sources */,
 				382566EB1E467FFB00E52BCE /* PulsViewController.swift in Sources */,
 			);
@@ -598,6 +609,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38A92FC01E4F7DC00032F46B /* NotificationController.swift in Sources */,
+				38EFD2D81E855B8000F05AF3 /* InterfaceManager.swift in Sources */,
 				38A92FBE1E4F7DC00032F46B /* ExtensionDelegate.swift in Sources */,
 				38C4533A1E5CDE5E00E9A676 /* WorkoutManager.swift in Sources */,
 				38A92FBC1E4F7DC00032F46B /* InterfaceController.swift in Sources */,

@@ -15,17 +15,24 @@ class WorkoutManager{
     var workoutSession: HKWorkoutSession?
     let heathStore = HKHealthStore()
     
-    func starWorkout(workoutConfiguration: HKWorkoutConfiguration){
+    func starWorkout(){
+        let configuration = HKWorkoutConfiguration()
+        configuration.activityType = .crossTraining
+        configuration.locationType = .indoor
+        
         do{
-            self.workoutSession =  try HKWorkoutSession(configuration: workoutConfiguration)
-            self.heathStore.start(self.workoutSession!)
-        } catch {
+            self.workoutSession = try HKWorkoutSession.init(configuration: configuration)
+        } catch{
             print(error)
         }
+        self.workoutSession?.delegate = InterfaceManager.instance.mainInterface
+        self.heathStore.start(self.workoutSession!)
     }
+    
     func stopWorkout(){
-        print("stopWorkout")
-        self.heathStore.end(self.workoutSession!)
+        if let workout = self.workoutSession{
+            heathStore.end(workout)
+        }
     }
     
 }

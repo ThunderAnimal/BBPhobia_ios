@@ -34,12 +34,25 @@ class SessionDelegate: NSObject,WCSessionDelegate{
         
     }
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        if let message = message["message from iOS app"]{
+        if let message = message["HelloWorld"]{
             print(message)
             WKInterfaceDevice.current().play(WKHapticType.notification)
+        }
+        if message["startWorkout"] != nil{
+            WorkoutManager.sharedManager.starWorkout()
         }
         if message["stopWorkout"] != nil{
             WorkoutManager.sharedManager.stopWorkout()
         }
+    }
+    func sendMessage(key : String, data: Any){
+        let message = [key: data]
+        session.sendMessage(message, replyHandler: { (replyMessage: [String : Any]) in
+            //HANDLE REPLY
+        }) { (error) in
+            print(error.localizedDescription)
+            return
+        }
+
     }
 }

@@ -52,6 +52,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate  {
     }
     
     func handle(_ workoutConfiguration: HKWorkoutConfiguration) {
-        WorkoutManager.sharedManager.starWorkout(workoutConfiguration: workoutConfiguration)
+        //DO NOTHING -> hacki to start the App
     }
 }

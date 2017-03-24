@@ -10,13 +10,41 @@ import Foundation
 import HealthKit
 import WatchKit
 
+protocol ObserverHeartRate: class {
+    func notifyNewHeartRate(heartRate: HeartRate)
+}
+
 class HealthController {
-    private let healthStore: HKHealthStore
+    private let healthStore = HKHealthStore()
+    private var listObserverHeartRate = [ObserverHeartRate]()
     
-    init(){
-        healthStore = HKHealthStore()
+    //public dynamic heartRate =  heartRate? = nil
+    
+    
+    public func getHealStore() -> HKHealthStore{
+        return healthStore
     }
     
+    public func addObserverHeartRate(observer :ObserverHeartRate){
+        listObserverHeartRate.append(observer)
+    }
+    
+    public func removeObserverHeartRate(observer: ObserverHeartRate){
+        for i in listObserverHeartRate.indices {
+            if listObserverHeartRate[i] === observer{
+                listObserverHeartRate.remove(at: i)
+                break
+            }
+        }
+    }
+    
+    public func newHeartRate(heartRate: HeartRate){
+        for observer in listObserverHeartRate {
+            observer.notifyNewHeartRate(heartRate: heartRate)
+        }
+    }
+
+
     public func enableHealthKit(completion: ((_ success:Bool, _ error:Error?) -> Void)!) -> Void{
         
         // 1. Type read from HK
@@ -52,27 +80,11 @@ class HealthController {
         }
     }
     
-    public func getHealStore() -> HKHealthStore{
-        return healthStore
-    }
-    
-    public func startWorkout(callback: ((_ success:Bool, _ error:Error?) -> Void)!){
+    public func getDummyWorkoutConfiguration() -> HKWorkoutConfiguration{
         let configuration = HKWorkoutConfiguration()
         configuration.activityType = .running
         configuration.locationType = .outdoor
-
-        self.healthStore.startWatchApp(with: configuration) { (success, error) in
-            if(success){
-                callback(success, nil)
-            }else{
-                callback(success, error)
-                if(error != nil){
-                    print(error.debugDescription)
-                }
-            }
-        }
-    }
-    public func stopWorkout(){
         
+        return configuration
     }
 }

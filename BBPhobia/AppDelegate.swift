@@ -43,6 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Show Statusbar
         UIApplication.shared.setStatusBarHidden(false, with: .slide)
         
+        //GET PERMISSION to HEALTHSTORE
+        AppComponent.instance.getHealthController().enableHealthKit(completion: nil)
+        
         return true
     }
 

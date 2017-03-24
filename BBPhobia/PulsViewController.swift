@@ -14,6 +14,7 @@ class FirstViewController: UIViewController, PulsView {
     @IBOutlet weak var btnHello: UIButton!
     @IBOutlet weak var btnStartWorkout: UIButton!
     @IBOutlet weak var btnStopWorkout: UIButton!
+    @IBOutlet weak var textHeartRate: UILabel!
     var presenter: PulsPresenter? = nil
 
     
@@ -41,9 +42,9 @@ class FirstViewController: UIViewController, PulsView {
                 presenter?.clickHello()
                 break
             case btnStartWorkout:
-                presenter?.startWorkout()
+                presenter?.startMeasure()
             case btnStopWorkout:
-                presenter?.stopWorkout()
+                presenter?.stopMeasure()
             default: break
         }
     }
@@ -65,6 +66,11 @@ class FirstViewController: UIViewController, PulsView {
         }else{
             btnStartWorkout.isHidden = false
             btnStopWorkout.isHidden = true
+        }
+    }
+    func drawHeartRate(value: Int){
+        DispatchQueue.main.async {
+            self.textHeartRate.text = String(value)
         }
     }
 }
