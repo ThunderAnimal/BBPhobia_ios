@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,19 +40,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="PULS Messen" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="72" y="313" width="231" height="42"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="90" y="363" width="195" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrJ-3A-dlU">
                                 <rect key="frame" x="123" y="54" width="130" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -62,8 +50,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Stop Messung"/>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Zi-Zd-aR3" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="94" width="343" height="484"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrP-Fn-l3h">
-                                <rect key="frame" x="146" y="98" width="83" height="21"/>
+                                <rect key="frame" x="146" y="587" width="83" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -73,14 +65,14 @@
                         <constraints>
                             <constraint firstItem="FrP-Fn-l3h" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="1QW-qi-3X8"/>
                             <constraint firstItem="41c-JO-oQ2" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="10" id="2Rn-gr-rhT"/>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
+                            <constraint firstItem="6Zi-Zd-aR3" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="4nb-PG-xTf"/>
+                            <constraint firstItem="6Zi-Zd-aR3" firstAttribute="centerX" secondItem="FrP-Fn-l3h" secondAttribute="centerX" id="4tt-5D-HYx"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="6Zi-Zd-aR3" secondAttribute="bottom" constant="40" id="F5L-tV-X5j"/>
                             <constraint firstItem="41c-JO-oQ2" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="HoZ-tD-wIm"/>
                             <constraint firstItem="UrJ-3A-dlU" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="10" id="PDL-4B-9yi"/>
                             <constraint firstItem="UrJ-3A-dlU" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Wgd-yZ-xdc"/>
-                            <constraint firstItem="FrP-Fn-l3h" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="54" id="Wzn-UK-h1b"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="6Zi-Zd-aR3" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="50" id="exh-44-Ab2"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="FrP-Fn-l3h" secondAttribute="bottom" constant="10" id="pGD-CV-61p"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Puls" id="bwT-oo-2Et"/>
@@ -88,6 +80,7 @@
                     <connections>
                         <outlet property="btnStartWorkout" destination="UrJ-3A-dlU" id="Scd-j1-fiX"/>
                         <outlet property="btnStopWorkout" destination="41c-JO-oQ2" id="7gx-dk-vx6"/>
+                        <outlet property="lineChartView" destination="6Zi-Zd-aR3" id="aGo-XC-YJo"/>
                         <outlet property="textHeartRate" destination="FrP-Fn-l3h" id="kFz-iy-kYT"/>
                     </connections>
                 </viewController>
