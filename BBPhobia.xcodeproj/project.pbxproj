@@ -15,6 +15,8 @@
 		382566F51E467FFB00E52BCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382566F31E467FFB00E52BCE /* LaunchScreen.storyboard */; };
 		382567001E467FFB00E52BCE /* BBPhobiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382566FF1E467FFB00E52BCE /* BBPhobiaTests.swift */; };
 		3825670B1E467FFB00E52BCE /* BBPhobiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3825670A1E467FFB00E52BCE /* BBPhobiaUITests.swift */; };
+		383A501A1E866CA400CE7E73 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383A50151E866C7C00CE7E73 /* Charts.framework */; };
+		383A501B1E866CA400CE7E73 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 383A50151E866C7C00CE7E73 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		38555D921E47727900A2A07B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38555D911E47727900A2A07B /* TabBarViewController.swift */; };
 		38A92FA51E4F707A0032F46B /* HealthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A92FA41E4F707A0032F46B /* HealthController.swift */; };
 		38A92FAC1E4F7DC00032F46B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A92FAA1E4F7DC00032F46B /* Interface.storyboard */; };
@@ -57,6 +59,34 @@
 			remoteGlobalIDString = 382566E41E467FFB00E52BCE;
 			remoteInfo = BBPhobia;
 		};
+		383A50141E866C7C00CE7E73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 383A500E1E866C7B00CE7E73 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		383A50161E866C7C00CE7E73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 383A500E1E866C7B00CE7E73 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120D51D811E6200D14B02;
+			remoteInfo = ChartsRealm;
+		};
+		383A50181E866C7C00CE7E73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 383A500E1E866C7B00CE7E73 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		383A501C1E866CA400CE7E73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 383A500E1E866C7B00CE7E73 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 		38A92FB61E4F7DC00032F46B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 382566DD1E467FFB00E52BCE /* Project object */;
@@ -74,6 +104,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		383A501E1E866CA400CE7E73 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				383A501B1E866CA400CE7E73 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38A92FCA1E4F7DC00032F46B /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,6 +154,7 @@
 		382567061E467FFB00E52BCE /* BBPhobiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBPhobiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3825670A1E467FFB00E52BCE /* BBPhobiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPhobiaUITests.swift; sourceTree = "<group>"; };
 		3825670C1E467FFB00E52BCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		383A500E1E866C7B00CE7E73 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master 2/Charts.xcodeproj"; sourceTree = "<group>"; };
 		38555D911E47727900A2A07B /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		38555DA01E47DC4B00A2A07B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		38A92FA41E4F707A0032F46B /* HealthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthController.swift; sourceTree = "<group>"; };
@@ -152,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38AC57001E4CD3D900408019 /* HealthKit.framework in Frameworks */,
+				383A501A1E866CA400CE7E73 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +226,7 @@
 		382566DC1E467FFB00E52BCE = {
 			isa = PBXGroup;
 			children = (
+				383A500E1E866C7B00CE7E73 /* Charts.xcodeproj */,
 				382566E71E467FFB00E52BCE /* BBPhobia */,
 				382566FE1E467FFB00E52BCE /* BBPhobiaTests */,
 				382567091E467FFB00E52BCE /* BBPhobiaUITests */,
@@ -235,6 +279,16 @@
 				3825670C1E467FFB00E52BCE /* Info.plist */,
 			);
 			path = BBPhobiaUITests;
+			sourceTree = "<group>";
+		};
+		383A500F1E866C7B00CE7E73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				383A50151E866C7C00CE7E73 /* Charts.framework */,
+				383A50171E866C7C00CE7E73 /* ChartsRealm.framework */,
+				383A50191E866C7C00CE7E73 /* ChartsTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		38555D971E4779A300A2A07B /* views */ = {
@@ -369,11 +423,13 @@
 				382566E21E467FFB00E52BCE /* Frameworks */,
 				382566E31E467FFB00E52BCE /* Resources */,
 				38A92FCE1E4F7DC00032F46B /* Embed Watch Content */,
+				383A501E1E866CA400CE7E73 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				38A92FC51E4F7DC00032F46B /* PBXTargetDependency */,
+				383A501D1E866CA400CE7E73 /* PBXTargetDependency */,
 			);
 			name = BBPhobia;
 			productName = BBPhobia;
@@ -510,6 +566,12 @@
 			mainGroup = 382566DC1E467FFB00E52BCE;
 			productRefGroup = 382566E61E467FFB00E52BCE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 383A500F1E866C7B00CE7E73 /* Products */;
+					ProjectRef = 383A500E1E866C7B00CE7E73 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				382566E41E467FFB00E52BCE /* BBPhobia */,
@@ -520,6 +582,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		383A50151E866C7C00CE7E73 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 383A50141E866C7C00CE7E73 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		383A50171E866C7C00CE7E73 /* ChartsRealm.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ChartsRealm.framework;
+			remoteRef = 383A50161E866C7C00CE7E73 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		383A50191E866C7C00CE7E73 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 383A50181E866C7C00CE7E73 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		382566E31E467FFB00E52BCE /* Resources */ = {
@@ -629,6 +715,11 @@
 			isa = PBXTargetDependency;
 			target = 382566E41E467FFB00E52BCE /* BBPhobia */;
 			targetProxy = 382567071E467FFB00E52BCE /* PBXContainerItemProxy */;
+		};
+		383A501D1E866CA400CE7E73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 383A501C1E866CA400CE7E73 /* PBXContainerItemProxy */;
 		};
 		38A92FB71E4F7DC00032F46B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -767,6 +858,7 @@
 		382567101E467FFB00E52BCE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BBPhobia/BBPhobia.entitlements;
 				DEVELOPMENT_TEAM = 7NV745LHBB;
@@ -781,6 +873,7 @@
 		382567111E467FFB00E52BCE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BBPhobia/BBPhobia.entitlements;
 				DEVELOPMENT_TEAM = 7NV745LHBB;
