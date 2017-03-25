@@ -8,10 +8,8 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, PulsView {
+class PulsViewController: UIViewController, PulsView {
     
-
-    @IBOutlet weak var btnHello: UIButton!
     @IBOutlet weak var btnStartWorkout: UIButton!
     @IBOutlet weak var btnStopWorkout: UIButton!
     @IBOutlet weak var textHeartRate: UILabel!
@@ -22,9 +20,10 @@ class FirstViewController: UIViewController, PulsView {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        presenter = PulsPresenter(view: self)
+        presenter = PulsPresenter(view: self,
+                                    watchSession: AppComponent.instance.getWatchSession(),
+                                    healthController: AppComponent.instance.getHealthController())
         
-        btnHello.addTarget(self, action: #selector(self.onClick(_:)), for: .touchUpInside)
         btnStartWorkout.addTarget(self, action: #selector(self.onClick(_:)), for: .touchUpInside)
         btnStopWorkout.addTarget(self, action: #selector(self.onClick(_:)), for: .touchUpInside)
         
@@ -38,9 +37,6 @@ class FirstViewController: UIViewController, PulsView {
     
     func onClick(_ sender: UIButton){
         switch sender {
-            case btnHello:
-                presenter?.clickHello()
-                break
             case btnStartWorkout:
                 presenter?.startMeasure()
             case btnStopWorkout:
@@ -49,11 +45,6 @@ class FirstViewController: UIViewController, PulsView {
         }
     }
     
-    func alterHelloWorld(){
-        let alert = UIAlertController(title: "Hello World!", message: "Hey ich lebe, mann ist das Geil!", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
     func viewError(errMsg:String) {
         let alert = UIAlertController(title: "Schade", message: errMsg, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))

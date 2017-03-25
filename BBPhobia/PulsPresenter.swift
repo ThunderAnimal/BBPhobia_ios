@@ -9,27 +9,21 @@
 import Foundation
 class PulsPresenter: ObserverHeartRate{
     private let view: PulsView!
+    private let watchSession: WatchSession!
+    private let healthController: HealthController!
     
-    init(view: PulsView){
+    init(view: PulsView, watchSession: WatchSession, healthController: HealthController){
         self.view = view
+        self.watchSession = watchSession
+        self.healthController = healthController
     }
     func requestContent(){
         view.drawState(isMeasure: false)
     }
     
-    func clickHello(){
-        AppComponent.instance.getWatchSession().sendMessage(key: "HelloWorld", data: "Hallo World!") { (success, errMsg) in
-            if(!success){
-                self.view.viewError(errMsg: errMsg)
-                print(errMsg)
-            }else{
-                 self.view.alterHelloWorld()
-            }
-        }
-    }
     func startMeasure(){
         //CHECK if is Enbale Healtkit
-        AppComponent.instance.getHealthController().enableHealthKit { (authorized, error) in
+        self.healthController.enableHealthKit { (authorized, error) in
             if(!authorized){
                 print(error.debugDescription)
                 self.view.viewError(errMsg: error.debugDescription)
@@ -37,20 +31,20 @@ class PulsPresenter: ObserverHeartRate{
             }
         }
         
-        AppComponent.instance.getWatchSession().sendMessage(key: "startWorkout", data: "start") { (success, errMsg) in
+        self.watchSession.sendMessage(key: "startWorkout", data: "start") { (success, errMsg) in
             if(success){
                 self.view.drawState(isMeasure: true)
-                AppComponent.instance.getHealthController().addObserverHeartRate(observer: self)
+                self.healthController.addObserverHeartRate(observer: self)
             }else{
                 self.view.viewError(errMsg: "Can't start." + errMsg)
             }
         }
     }
     func stopMeasure(){
-        AppComponent.instance.getWatchSession().sendMessage(key: "stopWorkout", data: "stop") { (success, errMsg) in
+        self.watchSession.sendMessage(key: "stopWorkout", data: "stop") { (success, errMsg) in
             if(success){
                 self.view.drawState(isMeasure: false)
-                AppComponent.instance.getHealthController().removeObserverHeartRate(observer: self)
+                self.healthController.removeObserverHeartRate(observer: self)
             }
             else{
                 self.view.viewError(errMsg: "Can't stop." + errMsg)

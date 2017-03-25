@@ -30,7 +30,7 @@
         <!--Puls-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="BBPhobia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="PulsViewController" customModule="BBPhobia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -52,20 +52,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sy-cl-hXv">
-                                <rect key="frame" x="125" y="388" width="125" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Hallo World!"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrJ-3A-dlU">
-                                <rect key="frame" x="126" y="54" width="123" height="36"/>
+                                <rect key="frame" x="123" y="54" width="130" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Start Workout"/>
+                                <state key="normal" title="Start Messung"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41c-JO-oQ2">
-                                <rect key="frame" x="127" y="54" width="123" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41c-JO-oQ2">
+                                <rect key="frame" x="123" y="54" width="129" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Stop Workout"/>
+                                <state key="normal" title="Stop Messung"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrP-Fn-l3h">
                                 <rect key="frame" x="146" y="98" width="83" height="21"/>
@@ -76,7 +71,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="bottom" secondItem="8Sy-cl-hXv" secondAttribute="top" constant="-33" id="0PH-cs-5wf"/>
                             <constraint firstItem="FrP-Fn-l3h" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="1QW-qi-3X8"/>
                             <constraint firstItem="41c-JO-oQ2" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="10" id="2Rn-gr-rhT"/>
                             <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
@@ -87,13 +81,11 @@
                             <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
-                            <constraint firstItem="8Sy-cl-hXv" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="wjr-lX-aMN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Puls" id="bwT-oo-2Et"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="btnHello" destination="8Sy-cl-hXv" id="g76-ss-EED"/>
                         <outlet property="btnStartWorkout" destination="UrJ-3A-dlU" id="Scd-j1-fiX"/>
                         <outlet property="btnStopWorkout" destination="41c-JO-oQ2" id="7gx-dk-vx6"/>
                         <outlet property="textHeartRate" destination="FrP-Fn-l3h" id="kFz-iy-kYT"/>
@@ -123,7 +115,7 @@
         <!--Historie-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="BBPhobia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="HistorieViewController" customModule="BBPhobia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -133,14 +125,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Verlauf Messungen" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="34" y="313" width="309" height="42"/>
+                                <rect key="frame" x="33" y="313" width="309" height="42"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="80" y="363" width="215" height="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loaded by HistorieViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
+                                <rect key="frame" x="71" y="363" width="233" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -158,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2110" y="390"/>
+            <point key="canvasLocation" x="2109.5999999999999" y="389.95502248875567"/>
         </scene>
         <!--Einstellung-->
         <scene sceneID="stz-XT-sTL">
@@ -180,7 +172,7 @@
         <!--Einstellung-->
         <scene sceneID="Qtc-M6-Qon">
             <objects>
-                <viewController id="Rqc-hY-Ux6" sceneMemberID="viewController">
+                <viewController id="Rqc-hY-Ux6" customClass="SettingViewController" customModule="BBPhobia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ocj-ey-B9z"/>
                         <viewControllerLayoutGuide type="bottom" id="yoX-lx-0Br"/>
@@ -188,7 +180,28 @@
                     <view key="view" contentMode="scaleToFill" id="qdX-58-UuX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Einsellungen " textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bYf-1O-heS">
+                                <rect key="frame" x="79" y="312" width="217" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SettingViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3c-Au-rGc">
+                                <rect key="frame" x="81" y="354" width="213" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bYf-1O-heS" firstAttribute="centerX" secondItem="qdX-58-UuX" secondAttribute="centerX" id="Bnw-6t-O1k"/>
+                            <constraint firstItem="K3c-Au-rGc" firstAttribute="centerX" secondItem="bYf-1O-heS" secondAttribute="centerX" id="PpP-xu-GJG"/>
+                            <constraint firstItem="K3c-Au-rGc" firstAttribute="top" secondItem="bYf-1O-heS" secondAttribute="bottom" id="lgv-AT-KJD"/>
+                            <constraint firstItem="bYf-1O-heS" firstAttribute="centerY" secondItem="qdX-58-UuX" secondAttribute="centerY" id="p0o-qa-SUf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Einstellung" id="i3t-RS-qtF"/>
                 </viewController>
@@ -216,7 +229,7 @@
         <!--Sensor-->
         <scene sceneID="ZcQ-wF-FUU">
             <objects>
-                <viewController id="28g-S0-mTT" sceneMemberID="viewController">
+                <viewController id="28g-S0-mTT" customClass="SensorViewController" customModule="BBPhobia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1CK-i9-erf"/>
                         <viewControllerLayoutGuide type="bottom" id="VzT-tP-a8n"/>
@@ -224,9 +237,40 @@
                     <view key="view" contentMode="scaleToFill" id="84u-VI-WjL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Sensor" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lno-OD-yQ2">
+                                <rect key="frame" x="130" y="312" width="115" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SesnorViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5u-Yh-b4H">
+                                <rect key="frame" x="82" y="354" width="212" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZF-hP-TLN">
+                                <rect key="frame" x="87" y="84" width="201" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Test Senor connection"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lno-OD-yQ2" firstAttribute="centerX" secondItem="84u-VI-WjL" secondAttribute="centerX" id="77a-hP-BHh"/>
+                            <constraint firstItem="O5u-Yh-b4H" firstAttribute="centerX" secondItem="lno-OD-yQ2" secondAttribute="centerX" id="FkR-xe-vpa"/>
+                            <constraint firstItem="MZF-hP-TLN" firstAttribute="centerX" secondItem="84u-VI-WjL" secondAttribute="centerX" id="JLR-MQ-cf7"/>
+                            <constraint firstItem="O5u-Yh-b4H" firstAttribute="top" secondItem="lno-OD-yQ2" secondAttribute="bottom" id="YZX-Jp-1eG"/>
+                            <constraint firstItem="lno-OD-yQ2" firstAttribute="centerY" secondItem="84u-VI-WjL" secondAttribute="centerY" id="i0L-hJ-5Px"/>
+                            <constraint firstItem="MZF-hP-TLN" firstAttribute="top" secondItem="1CK-i9-erf" secondAttribute="bottom" constant="20" id="mof-2M-KKB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sensor" id="Ieb-Ue-YCl"/>
+                    <connections>
+                        <outlet property="btnTestSensor" destination="MZF-hP-TLN" id="mGB-RB-yyd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iHA-SY-M5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -252,7 +296,7 @@
         <!--Information-->
         <scene sceneID="wwD-1P-51e">
             <objects>
-                <viewController id="wRj-FO-K8n" sceneMemberID="viewController">
+                <viewController id="wRj-FO-K8n" customClass="InformationViewController" customModule="BBPhobia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0uY-Cg-meR"/>
                         <viewControllerLayoutGuide type="bottom" id="gGL-NB-bJQ"/>
@@ -260,7 +304,28 @@
                     <view key="view" contentMode="scaleToFill" id="q3d-SH-Fjw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Information" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="jrH-Mr-mgk">
+                                <rect key="frame" x="97" y="313" width="181" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by InformationViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atk-xC-mQT">
+                                <rect key="frame" x="68" y="355" width="240" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jrH-Mr-mgk" firstAttribute="centerX" secondItem="q3d-SH-Fjw" secondAttribute="centerX" id="4rW-6f-WXO"/>
+                            <constraint firstItem="Atk-xC-mQT" firstAttribute="centerX" secondItem="jrH-Mr-mgk" secondAttribute="centerX" id="Hm8-tF-B0B"/>
+                            <constraint firstItem="Atk-xC-mQT" firstAttribute="top" secondItem="jrH-Mr-mgk" secondAttribute="bottom" id="Qf1-lR-S5A"/>
+                            <constraint firstItem="jrH-Mr-mgk" firstAttribute="centerY" secondItem="q3d-SH-Fjw" secondAttribute="centerY" id="edd-vl-lDq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Information" id="BMZ-LD-o06"/>
                 </viewController>
@@ -313,7 +378,7 @@
         <!--Historie-->
         <scene sceneID="YxU-8q-9ig">
             <objects>
-                <viewController id="AtM-J9-OSe" customClass="SecondViewController" customModule="BBPhobia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AtM-J9-OSe" customClass="HistorieViewController" customModule="BBPhobia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gbq-p7-DcW"/>
                         <viewControllerLayoutGuide type="bottom" id="dBg-LQ-PmM"/>
