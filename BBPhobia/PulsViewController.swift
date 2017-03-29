@@ -45,7 +45,7 @@ class PulsViewController: UIViewController, PulsView {
         lineChartView.chartDescription?.text = ""
         lineChartView.noDataTextColor = myAppColor.textColorDark
         lineChartView.tintColor = myAppColor.primaryColor
-        lineChartView.animate(xAxisDuration: 1.5, yAxisDuration: 0.5)
+        lineChartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5)
         
         lineChartView.dragEnabled = true
         lineChartView.setScaleEnabled(true)
@@ -135,8 +135,13 @@ class PulsViewController: UIViewController, PulsView {
             
             self.lineChartView.notifyDataSetChanged()
             
-            self.lineChartView.setVisibleXRangeMaximum(120.0)
-            self.lineChartView.moveViewToX(Double((data?.entryCount)!))
+            self.lineChartView.setVisibleXRangeMinimum(20.0)
+            self.lineChartView.setVisibleXRangeMaximum(20.0)
+            
+            if (Double((data?.entryCount)!) > 20){
+                self.lineChartView.moveViewToX(Double((data?.entryCount)!))
+            }
+            
             
         }
     }
